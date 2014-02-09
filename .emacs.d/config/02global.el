@@ -15,10 +15,18 @@
 (require 'unicad)			; charset auto detector
 (require 'smart-operator)		; smart operator when programming
 
-(require 'ido)
+(require 'ido nil t)
+(when (featurep 'ido)
+  (ido-mode t)				; turn on ido mode
+  (setq ido-save-directory-list-file "~/tmp/emacs-backup/.ido_last"))
+
 (require 'ibuffer)
 
+;; no yes-or-no, just y-or-n
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; show match paren
+(show-paren-mode t)
 
 ;;; backup files
 (setq backup-directory-alist '(("."	.	"~/tmp/emacs-backup"))
@@ -30,6 +38,6 @@
       )
 
 ;;; Make `kill-line' with no arg at beg of line kill the whole line.
-(setq kill-whole-line t)
+;; (setq kill-whole-line t)
 
 (provide '02global)

@@ -6,4 +6,6 @@
 (require '02global)    ; global settings
 (require '03key)       ; gloabl key settings
 (require '04eim)       ; emacs input method by ywb@newsmth(happierbee)
+(require '05dired)     ; dired
+(require '06color)     ; color theme settings
 (require '10c-mode)    ; settings for c-mode
