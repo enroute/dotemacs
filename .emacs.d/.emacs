@@ -1,22 +1,8 @@
-(winner-mode 1)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/config/"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/"))
 
-(menu-bar-mode -1)
-(toggle-scroll-bar -1)
-(tool-bar-mode -1)
+(require '01putty)
+(require '02global)
+(require '03key)
 
-(add-to-list 'load-path "~/.emacs.d/packages/")
-(require 'xcscope)
-(require 'unicad)
-(require 'smart-operator)
-
-(require 'ido)
-
-
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-(add-hook 'c-mode-hook (lambda ()
-  (smart-operator-mode)
-  (c-set-style "linux")
-  (setq c-basic-offset 4)))
-  
-(global-set-key "\M-w" 'clipboard-kill-ring-save)
+(require '10c-mode)
