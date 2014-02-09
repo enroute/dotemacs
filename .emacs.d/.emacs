@@ -7,3 +7,4 @@
 (require '04eim)			; emacs input method by ywb@newsmth(happierbee)
 
 (require '10c-mode)			; settings for c-mode
+
