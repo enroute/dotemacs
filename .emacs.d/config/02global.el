@@ -2,6 +2,8 @@
 
 (winner-mode 1)                         ; enable winner mode
 (column-number-mode t)                  ; column number
+
+(setq fill-column 80)			; default to 70
 (auto-fill-mode t)                      ; auto fill
 
 (menu-bar-mode -1)                      ; disable menu bar
@@ -18,18 +20,16 @@
 (require 'ido nil t)
 (when (featurep 'ido)
   (ido-mode t)				; turn on ido mode
-  (setq ido-save-directory-list-file "~/tmp/emacs-backup/.ido_last"))
+  (setq ido-save-directory-list-file (expand-file-name "~/.emacs.d/.ido_last")))
 
 (require 'ibuffer)
 
-;; no yes-or-no, just y-or-n
-(defalias 'yes-or-no-p 'y-or-n-p)
+(defalias 'yes-or-no-p 'y-or-n-p)	; just y-or-n
 
-;; show match paren
-(show-paren-mode t)
+(show-paren-mode t)			; show match parens
 
 ;;; backup files
-(setq backup-directory-alist '(("."	.	"~/tmp/emacs-backup"))
+(setq backup-directory-alist '(("." . "~/.emacs.d/emacs-backup/"))
       backup-by-copying t    ; Don't delink hardlinks
       version-control t      ; Use version numbers on backups
       delete-old-versions t  ; Automatically delete excess backups
@@ -37,7 +37,7 @@
       kept-old-versions 5    ; and how many of the old
       )
 
-;;; Make `kill-line' with no arg at beg of line kill the whole line.
-;; (setq kill-whole-line t)
+(setq kill-whole-line t) ; Make `kill-line' also kill the newline char
+(setq kill-ring-max 200) ; default to 60
 
 (provide '02global)
