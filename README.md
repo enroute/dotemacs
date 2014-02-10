@@ -6,9 +6,7 @@ dotemacs
 ========
 * How to use?
 
-Step 1. Checkout.
-
-Step 2. Make symbol links. Assuming dotemacs is located at "~/":
-cd ~
-ln -s dotemacs/.emacs.d .emacs.d
-ln -s dotemacs/.emacs.d/.emacs .emacs
+$cd ~
+$git clone git@github.com:enroute/dotemacs.git
+$ln -s dotemacs/.emacs.d .emacs.d
+$ln -s dotemacs/.emacs.d/.emacs .emacs
