@@ -1,6 +1,11 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/config/"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/"))
 
+;; load all files
+;; (mapc 'load (directory-files "~/.emacs.d/config" t "^[^.#].*\.el$"))
+
+;; load each file separately, which makes it convenient to disable one
+;; temparately
 (require '00func)      ; useful functions
 (require '01putty)     ; settings for putty
 (require '02global)    ; global settings

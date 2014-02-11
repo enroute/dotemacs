@@ -1,5 +1,7 @@
 ;;;; Global settings
 
+(setq default-major-mode 'text-mode)    ; set default major mode
+
 (winner-mode 1)                         ; enable winner mode
 (column-number-mode t)                  ; column number
 
@@ -10,19 +12,37 @@
 (toggle-scroll-bar -1)                  ; disable scroll bar
 (tool-bar-mode -1)                      ; disable tool bar
 
-(setq indent-tabs-mode nil)             ; disable tabs
-
 (require 'xcscope)			; for viewing c codes
 
 (require 'unicad)			; charset auto detector
 (require 'smart-operator)		; smart operator when programming
 
+;; ido mode
 (require 'ido nil t)
 (when (featurep 'ido)
   (ido-mode t)				; turn on ido mode
+  (setq ido-create-new-buffer 'always)  ; always create new buffer
+  (run-at-time "30 minutes" 1800 'ido-save-history)
   (setq ido-save-directory-list-file (expand-file-name "~/.emacs.d/.ido_last")))
 
+;; recentf mode
+(require 'recentf)
+(when (featurep 'recentf)
+  (recentf-mode 1)
+  (setq recentf-save-file (expand-file-name "~/.emacs.d/.recentf"))
+  (setq recentf-exclude (append recentf-exclude
+                                '(".recentf"
+                                  ".ido_last"
+                                  "emacs-woman-cache.el")))
+  (setq recentf-max-menu-items 100)
+  (run-at-time "30 minutes" 1800 'recentf-save-list))
+
+;; ibuffer
 (require 'ibuffer)
+
+;; identify buffer name by prefix directory
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
 
 (defalias 'yes-or-no-p 'y-or-n-p)	; just y-or-n
 
@@ -37,7 +57,10 @@
       kept-old-versions 5    ; and how many of the old
       )
 
-(setq kill-whole-line t) ; Make `kill-line' also kill the newline char
-(setq kill-ring-max 200) ; default to 60
+(setq-default inhibit-startup-message t) ; inhibits the startup screen
+(setq indent-tabs-mode nil)              ; disable tabs
+(setq kill-whole-line t)   ; Make `kill-line' also kill the newline char
+(setq kill-ring-max 200)   ; default to 60
+
 
 (provide '02global)
