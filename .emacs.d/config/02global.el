@@ -62,5 +62,8 @@
 (setq kill-whole-line t)   ; Make `kill-line' also kill the newline char
 (setq kill-ring-max 200)   ; default to 60
 
+;; show time on mode line
+(setq display-time-format "[%Z]%Y-%m-%d[%a]%H:%M")
+(display-time-mode 1)
 
 (provide '02global)
