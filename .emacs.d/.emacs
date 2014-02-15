@@ -8,7 +8,9 @@
 ;; temparately
 (require '00func)      ; useful functions
 
-(when (member "1" (my-get-shell-command-output "env | grep -q 'SSH_CLIENT'"))
+;; output of "env | grep 'SSH_CLIENT'" should looks like:
+;; SSH_CLIENT=xxx.xxx.xxx.xxx xxx 22
+(when (member "SSH_CLIENT" (my-get-shell-command-output "env | grep 'SSH_CLIENT'"))
   (require '01putty))  ; settings for putty
 
 (require '02global)    ; global settings
