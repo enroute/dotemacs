@@ -20,3 +20,4 @@
 (require '06color)     ; color theme settings
 (require '07yasnippet) ; yasnippet settings
 (require '10c-mode)    ; settings for c-mode
+(require '11jde)       ; settings for jde

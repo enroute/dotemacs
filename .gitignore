@@ -1,6 +1,9 @@
-#*
-.emacs.d/auto-save-list/
+.emacs.d/#*
 .emacs.d/.ido_last
 .emacs.d/.recentf
-.emacs.d/emacs-backup/
+.emacs.d/abbrev_defs
 .emacs.d/tramp
+
+.emacs.d/auto-save-list/
+.emacs.d/emacs-backup/
+.emacs.d/semanticdb/
