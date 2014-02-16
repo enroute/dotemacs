@@ -12,6 +12,7 @@
 (toggle-scroll-bar -1)                  ; disable scroll bar
 (tool-bar-mode -1)                      ; disable tool bar
 
+(require 'w3m)				; w3m for browsing WWW and HTML files
 (require 'xcscope)			; for viewing c codes
 
 (require 'unicad)			; charset auto detector

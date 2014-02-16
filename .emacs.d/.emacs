@@ -7,7 +7,10 @@
 ;; load each file separately, which makes it convenient to disable one
 ;; temparately
 (require '00func)      ; useful functions
-(require '01putty)     ; settings for putty
+
+(when (member "1" (my-get-shell-command-output "env | grep -q 'SSH_CLIENT'"))
+  (require '01putty))  ; settings for putty
+
 (require '02global)    ; global settings
 (require '03key)       ; gloabl key settings
 (require '04eim)       ; emacs input method by ywb@newsmth(happierbee)
