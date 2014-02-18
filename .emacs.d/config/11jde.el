@@ -1,4 +1,10 @@
 ;;; jdee, for java
+
+;; for jdee 2.4.0.1, in case `jde-get-jdk-dir' throws an error, the
+;; environment variable may be required, e.g., put the following in
+;; ~/.bashrc
+;; export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-i386/
+
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/jdee/lisp"))
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/cedet/cogre"))
