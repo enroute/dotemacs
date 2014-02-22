@@ -16,4 +16,7 @@
 (require 'eim-extra)
 (global-set-key ";" 'eim-insert-ascii)
 
+(setq default-input-method 'eim-wb)
+(setq eim-wb-use-gbk t)
+
 (provide '04eim)
