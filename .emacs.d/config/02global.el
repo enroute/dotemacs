@@ -5,23 +5,27 @@
 (winner-mode 1)                         ; enable winner mode
 (column-number-mode t)                  ; column number
 
-(setq fill-column 80)			; default to 70
+(setq fill-column 80)                   ; default to 70
 (auto-fill-mode t)                      ; auto fill
 
 (menu-bar-mode -1)                      ; disable menu bar
 (toggle-scroll-bar -1)                  ; disable scroll bar
 (tool-bar-mode -1)                      ; disable tool bar
 
-(require 'w3m)				; w3m for browsing WWW and HTML files
-(require 'xcscope)			; for viewing c codes
+(require 'w3m)                          ; w3m for browsing WWW and HTML files
+(when (featurep 'w3m)
+  (setq w3m-use-cookies t))             ; use cookies
 
-(require 'unicad)			; charset auto detector
-(require 'smart-operator)		; smart operator when programming
+
+(require 'xcscope)                      ; for viewing c codes
+
+(require 'unicad)                       ; charset auto detector
+(require 'smart-operator)               ; smart operator when programming
 
 ;; ido mode
 (require 'ido nil t)
 (when (featurep 'ido)
-  (ido-mode t)				; turn on ido mode
+  (ido-mode t)                          ; turn on ido mode
   (setq ido-create-new-buffer 'always)  ; always create new buffer
   (run-at-time "30 minutes" 1800 'ido-save-history)
   (setq ido-save-directory-list-file (expand-file-name "~/.emacs.d/.ido_last")))
@@ -45,9 +49,9 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-(defalias 'yes-or-no-p 'y-or-n-p)	; just y-or-n
+(defalias 'yes-or-no-p 'y-or-n-p)       ; just y-or-n
 
-(show-paren-mode t)			; show match parens
+(show-paren-mode t)                     ; show match parens
 
 ;;; backup files
 (setq backup-directory-alist '(("." . "~/.emacs.d/emacs-backup/"))
