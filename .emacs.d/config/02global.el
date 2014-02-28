@@ -14,7 +14,7 @@
 
 (require 'w3m)                          ; w3m for browsing WWW and HTML files
 (when (featurep 'w3m)
-  (setq w3m-use-cookies t)		; use cookies
+  (setq w3m-use-cookies t)              ; use cookies
   (add-hook 'w3m-mode-hook (lambda ()
     (local-unset-key "\C-xb"))))        ; don't use `w3m-switch-buffer'
 
@@ -64,7 +64,7 @@
       )
 
 (setq-default inhibit-startup-message t) ; inhibits the startup screen
-(setq-default indent-tabs-mode nil)	 ; disable tabs
+(setq-default indent-tabs-mode nil)      ; disable tabs
 (setq kill-whole-line t)   ; Make `kill-line' also kill the newline char
 (setq kill-ring-max 200)   ; default to 60
 
