@@ -18,5 +18,3 @@
 
 (setq default-input-method 'eim-wb)
 (setq eim-wb-use-gbk t)
-
-(provide '04eim)

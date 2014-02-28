@@ -31,8 +31,6 @@
 (defun screen-width nil -1)
 (define-obsolete-function-alias 'make-local-hook 'ignore "21.1")
 
-(provide '11jde)
-
 ;; example of prj.el, which should be put in the root directory of the project
 (when nil
 ;; START OF prj.el

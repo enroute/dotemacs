@@ -18,9 +18,9 @@
                "                     [ASCII table]\n\n"
                'face font-lock-comment-face))
       (insert (propertize
-	       (concat "DEC [0X]  SYM | DEC [0X]  SYM | DEC [0X]  SYM | DEC [0X]  SYM\n"
-		       "--------------+---------------+---------------+--------------\n")
-	       'face font-lock-comment-face))
+               (concat "DEC [0X]  SYM | DEC [0X]  SYM | DEC [0X]  SYM | DEC [0X]  SYM\n"
+                       "--------------+---------------+---------------+--------------\n")
+               'face font-lock-comment-face))
       (while (< i 32)
         (dolist (tmp (list i (+ 32 i) (+ 64 i) (+ 96 i)))
           (insert (concat
@@ -59,5 +59,3 @@ COMMAND."
         ;; return the output as a list
         output))))
 
-
-(provide '00func)

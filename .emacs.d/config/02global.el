@@ -14,9 +14,9 @@
 
 (require 'w3m)                          ; w3m for browsing WWW and HTML files
 (when (featurep 'w3m)
-  (setq w3m-use-cookies t))             ; use cookies
-(add-hook 'w3m-mode-hook (lambda ()
-  (local-unset-key "\C-xb")))		; don't use `w3m-switch-buffer'
+  (setq w3m-use-cookies t)		; use cookies
+  (add-hook 'w3m-mode-hook (lambda ()
+    (local-unset-key "\C-xb"))))        ; don't use `w3m-switch-buffer'
 
 (require 'xcscope)                      ; for viewing c codes
 
@@ -64,12 +64,10 @@
       )
 
 (setq-default inhibit-startup-message t) ; inhibits the startup screen
-(setq indent-tabs-mode nil)              ; disable tabs
+(setq-default indent-tabs-mode nil)	 ; disable tabs
 (setq kill-whole-line t)   ; Make `kill-line' also kill the newline char
 (setq kill-ring-max 200)   ; default to 60
 
 ;; show time on mode line
 (setq display-time-format "[%Z]%Y-%m-%d[%a]%H:%M")
 (display-time-mode 1)
-
-(provide '02global)

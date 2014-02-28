@@ -17,5 +17,3 @@
   (let ((file (dired-get-file-for-visit)))
     (when (featurep 'w3m)
       (w3m-browse-url file))))
-
-(provide '05dired)

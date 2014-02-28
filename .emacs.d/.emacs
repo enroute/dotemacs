@@ -6,18 +6,18 @@
 
 ;; load each file separately, which makes it convenient to disable one
 ;; temparately
-(require '00func)      ; useful functions
+(load "00func")      ; useful functions
 
 ;; output of "env | grep 'SSH_CLIENT'" should looks like:
 ;; SSH_CLIENT=xxx.xxx.xxx.xxx xxx 22
 (when (member "SSH_CLIENT" (my-get-shell-command-output "env | grep 'SSH_CLIENT'"))
-  (require '01putty))  ; settings for putty
+  (load "01putty"))  ; settings for putty
 
-(require '02global)    ; global settings
-(require '03key)       ; gloabl key settings
-(require '04eim)       ; emacs input method by ywb@newsmth(happierbee)
-(require '05dired)     ; dired
-(require '06color)     ; color theme settings
-(require '07yasnippet) ; yasnippet settings
-(require '10c-mode)    ; settings for c-mode
-(require '11jde)       ; settings for jde
+(load "02global")    ; global settings
+(load "03key")       ; gloabl key settings
+(load "04eim")       ; emacs input method by ywb@newsmth(happierbee")
+(load "05dired")     ; dired
+(load "06color")     ; color theme settings
+(load "07yasnippet") ; yasnippet settings
+(load "10c-mode")    ; settings for c-mode
+(load "11jde")       ; settings for jde
