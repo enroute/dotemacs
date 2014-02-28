@@ -15,7 +15,8 @@
 (require 'w3m)                          ; w3m for browsing WWW and HTML files
 (when (featurep 'w3m)
   (setq w3m-use-cookies t))             ; use cookies
-
+(add-hook 'w3m-mode-hook (lambda ()
+  (local-unset-key "\C-xb")))		; don't use `w3m-switch-buffer'
 
 (require 'xcscope)                      ; for viewing c codes
 
