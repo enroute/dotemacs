@@ -55,7 +55,7 @@
     (define-key keymap "-" 'smart-operator--)
     (define-key keymap "*" 'smart-operator-*)
     (define-key keymap "/" 'smart-operator-/)
-    (define-key keymap "&" 'smart-operator-&)
+    ;; (define-key keymap "&" 'smart-operator-&)
     (define-key keymap "|" 'smart-operator-self-insert-command)
     (define-key keymap "!" 'smart-operator-self-insert-command)
     (define-key keymap ":" 'smart-operator-:)
@@ -176,6 +176,8 @@ so let's not get too insert-happy."
         (eq major-mode 'sgml-mode))
     (insert "<>")
     (backward-char))
+   ((looking-back "^inc")               ; for inc< in yasnippet
+    (insert "<"))
    (t
     (smart-operator-insert "<"))))
 

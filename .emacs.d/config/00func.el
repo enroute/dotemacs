@@ -59,3 +59,13 @@ COMMAND."
         ;; return the output as a list
         output))))
 
+
+;; sdcv at point
+(defun sdcv (beg end)
+  (interactive "r")
+  (let ((word (if (region-active-p)
+                  (buffer-substring-no-properties beg end)
+                (current-word t t))))
+    (when (not word)
+      (setq word (read-string "Enter word to translate: ")))
+    (shell-command (concat "sdcv" " " word))))
