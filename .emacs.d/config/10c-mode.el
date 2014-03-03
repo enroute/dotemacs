@@ -36,7 +36,7 @@
 
 (add-hook 'c-mode-hook (lambda ()
   (smart-operator-mode)
-  (setq indent-tabs-mode nil)           ; disable tabs
   (c-set-style "linux")
-  (setq c-basic-offset 4)
-  ))
+  (setq indent-tabs-mode nil            ; disable tabs
+        c-basic-offset 4)               ; 4 spaces of basic offset
+  (c-set-offset 'case-label '+)))       ; switch-case indentation style
