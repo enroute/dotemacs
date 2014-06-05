@@ -91,5 +91,5 @@
 ;;; To use 256 colors in putty, start emacs by running:
 ;;     $ env TERM=xterm-256color emacs
 ;; or alternatively, put the following line in ~/.bashrc:
-;;     export TERM=xterm-256color emacs
+;;     export TERM=xterm-256color
 ;; To confirm, try `list-color-display' in emacs, which SHOULD give all 256 colors.
