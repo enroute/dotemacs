@@ -31,6 +31,15 @@
 (defun screen-width nil -1)
 (define-obsolete-function-alias 'make-local-hook 'ignore "21.1")
 
+;; c style 
+;(setq c-default-style '((java-mode . "linux")))
+(add-hook 'jde-mode-hook (lambda ()
+  (smart-operator-mode)
+  (c-set-style "linux")
+  (setq indent-tabs-mode nil            ; disable tabs
+        c-basic-offset 4)               ; 4 spaces of basic offset
+  (c-set-offset 'case-label '+)))       ; switch-case indentation style
+                          
 ;; example of prj.el, which should be put in the root directory of the project
 (when nil
 ;; START OF prj.el

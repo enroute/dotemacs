@@ -39,4 +39,5 @@
   (c-set-style "linux")
   (setq indent-tabs-mode nil            ; disable tabs
         c-basic-offset 4)               ; 4 spaces of basic offset
+  (c-set-offset 'arglist-intro '+)      ; http://www.emacswiki.org/emacs/IndentingC
   (c-set-offset 'case-label '+)))       ; switch-case indentation style

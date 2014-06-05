@@ -93,7 +93,8 @@
   (smart-operator-insert (string last-command-char)))
 
 (defvar smart-operator-list
-  '("=" "<" ">" "%" "+" "-" "*" "/" "&" "|" "!" ":" "?" "," "." "(" ")"))
+  ;'("=" "<" ">" "%" "+" "-" "*" "/" "&" "|" "!" ":" "?" "," "." "(" ")"))
+  '("=" "<" ">" "%" "+" "-" "*" "/" "&" "|" "!" ":" "?" "." "(" ")"))
 
 (defun smart-operator-insert (op &optional only-after)
   "Insert operator OP with surrounding spaces.

@@ -58,6 +58,7 @@
     ;; (define-key keymap "&" 'smart-operator-&)
     (define-key keymap "|" 'smart-operator-self-insert-command)
     (define-key keymap "!" 'smart-operator-self-insert-command)
+    (define-key keymap "^" 'smart-operator-self-insert-command)
     (define-key keymap ":" 'smart-operator-:)
     (define-key keymap "?" 'smart-operator-?)
     (define-key keymap "," 'smart-operator-\,)
@@ -66,7 +67,7 @@
     keymap)
   "Keymap used my `smart-operator-mode'.")
 
-(defvar smart-operator-double-space-docs t
+(defvar smart-operator-double-space-docs nil
   "Enable double spacing of . in document lines - e,g, type '.' => get '.  '")
 
 (defvar smart-operator-docs nil
@@ -89,7 +90,8 @@
   (smart-operator-insert (string last-command-event)))
 
 (defvar smart-operator-list
-  '("=" "<" ">" "%" "+" "-" "*" "/" "&" "|" "!" ":" "?" "," "."))
+  ;'("=" "<" ">" "%" "+" "-" "*" "/" "&" "|" "!" ":" "?" "," "."))
+  '("=" "<" ">" "%" "+" "-" "*" "/" "&" "|" "!" ":" "?" "." "^"))
 
 (defun smart-operator-insert (op &optional only-where newline-&-indent)
   "See `smart-operator-insert-1'."
@@ -100,7 +102,8 @@
         ((and
           (not smart-operator-docs)
           (smart-operator-document-line?))
-         (smart-operator-insert-1 op 'middle))
+         ;; (smart-operator-insert-1 op 'middle)
+         (insert op))
         (t
          (smart-operator-insert-1 op only-where)))
   (if newline-&-indent (newline-and-indent)))
@@ -263,7 +266,12 @@ so let's not get too insert-happy."
          ;; | *p++;
          ;; | *a = *b;
          ;; `----
-         (cond ((looking-back (concat (smart-operator-c-types) " *" ))
+         (cond ((looking-back "[:,;] *")
+                (smart-operator-insert "*" 'before))
+               ((looking-back "[][({] *")
+                (smart-operator-insert "*" 'after)
+                (delete-char -1))
+               ((looking-back (concat (smart-operator-c-types) " *" ))
                 (smart-operator-insert "*" 'before))
                ((looking-back "\\* *")
                 (smart-operator-insert "*" 'middle))
@@ -312,13 +320,21 @@ so let's not get too insert-happy."
 (defun smart-operator-- ()
   "See `smart-operator-insert'."
   (interactive)
-  (cond ((and c-buffer-is-cc-mode (looking-back "\\- *"))
-         (when (looking-back "[a-zA-Z0-9_] +\\- *")
-           (save-excursion
-             (backward-char 2)
-             (delete-horizontal-space)))
-         (smart-operator-insert "-" 'middle)
-         (indent-according-to-mode))
+  (cond (c-buffer-is-cc-mode
+         (cond ((looking-back "\\- *")
+                (when (looking-back "[a-zA-Z0-9_] +\\- *")
+                  (save-excursion
+                    (backward-char 2)
+                    (delete-horizontal-space)))
+                (smart-operator-insert "-" 'middle)
+                (indent-according-to-mode))
+               ((looking-back "[:,;] *")
+                (smart-operator-insert "-" 'before))
+               ((looking-back "[({] *")
+                (smart-operator-insert "-" 'after)
+                (delete-char -1))
+               (t
+                (smart-operator-insert "-"))))
         (t
          (smart-operator-insert "-"))))
 
