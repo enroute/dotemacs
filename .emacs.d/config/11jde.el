@@ -38,7 +38,12 @@
   (c-set-style "linux")
   (setq indent-tabs-mode nil            ; disable tabs
         c-basic-offset 4)               ; 4 spaces of basic offset
-  (c-set-offset 'case-label '+)))       ; switch-case indentation style
+  ;; Set offsets, use `c-show-syntactic-information', which is
+  ;; normally bound to "C-c C-s", on the braces, to find out the
+  ;; appropriate indentation offset symbol.
+  (c-set-offset 'case-label '+)         ; 
+  (c-set-offset 'inline-open 0)
+  (c-set-offset 'class-open  0)))       ; switch-case indentation style
                           
 ;; example of prj.el, which should be put in the root directory of the project
 (when nil
