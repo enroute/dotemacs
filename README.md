@@ -4,7 +4,7 @@ dotemacs
 .emacs, including necessary packages
 
 ========
-* How to use?
+# How to use?
 ```
 $ cd ~
 $ git clone git@github.com:enroute/dotemacs.git
@@ -13,9 +13,8 @@ $ ln -s dotemacs/.emacs.d/.emacs .emacs
 ```
 
 ========
-* Useful commands
-
-** Mode independent commands
+# Useful commands
+## Mode independent commands
 
 ```
 M-!          shell-command
@@ -59,14 +58,14 @@ M-\          delete-horizontal-space
              flush-lines
 ```
 
-** Mode dependent commands
+## Mode dependent commands
 
 ```
 C-c C-s      c-show-syntactic-information
 C-c <left>   winner-undo
 ```
 
-** Misc
+## Misc
 
 ```
 C-c C-h      list key bindings starting with C-c
