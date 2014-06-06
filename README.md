@@ -14,7 +14,10 @@ $ ln -s dotemacs/.emacs.d/.emacs .emacs
 
 ========
 * Useful commands
+
 ** Mode independent commands
+
+```
 M-!          shell-command
 M-|          shell-command-on-region
 M-x          execute-extended-command
@@ -54,12 +57,19 @@ C-x C-o      delete-blank-lines
 M-SPC        just-one-space
 M-\          delete-horizontal-space
              flush-lines
+```
 
 ** Mode dependent commands
+
+```
 C-c C-s      c-show-syntactic-information
 C-c <left>   winner-undo
+```
 
 ** Misc
+
+```
 C-c C-h      list key bindings starting with C-c
 C-x C-h      list key bindings starting with C-x
 C-x 8 C-h    list key bindings starting with C-x 8
+```
