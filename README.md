@@ -72,3 +72,6 @@ C-c C-h      list key bindings starting with C-c
 C-x C-h      list key bindings starting with C-x
 C-x 8 C-h    list key bindings starting with C-x 8
 ```
+
+## Align
+`table-capture' and `table-release' can be used to line up text.
