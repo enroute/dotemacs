@@ -5,7 +5,7 @@
 ;; (mapc 'load (directory-files "~/.emacs.d/config" t "^[^.#].*\.el$"))
 
 ;; load each file separately, which makes it convenient to disable one
-;; temparately
+;; temporately
 (load "00func")      ; useful functions
 
 ;; output of "env | grep 'SSH_CLIENT'" should looks like:
@@ -24,15 +24,4 @@
 (load "12lua-mode")  ; lua mode
 (load "13cperl-mode"); cperl-mode
 (load "14org-mode")  ; org-mode
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/org/work.org"))))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+
