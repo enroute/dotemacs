@@ -95,3 +95,6 @@ the syntax class ')'."
 ;; (put 'downcase-region 'disabled nil)
 ;; (put 'scroll-left 'disabled nil)
 ;; (put 'erase-buffer 'disabled nil)
+
+;; enter view mode when buffer is read-only
+(setq view-read-only t)

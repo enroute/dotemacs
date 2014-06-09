@@ -5,7 +5,7 @@
 ;; (mapc 'load (directory-files "~/.emacs.d/config" t "^[^.#].*\.el$"))
 
 ;; load each file separately, which makes it convenient to disable one
-;; temporately
+;; temporarily
 (load "00func")      ; useful functions
 
 ;; output of "env | grep 'SSH_CLIENT'" should looks like:

@@ -34,7 +34,7 @@ C-h C-f      view-emacs-FAQ
 C-h b        describe-bindings
 
 C-x b        switch-to-buffer/ido-switch-buffer
-C-x C-q      view-mode
+C-x C-q      toggle-read-only (set `view-read-only' to enter view-mode automatically)
 C-x RET r    revert-buffer-with-coding-system
 
              recover-session
@@ -66,12 +66,14 @@ C-c <left>   winner-undo
 ```
 
 ## Misc
-
+The following key bindings may not work in all buffers, (e.g. *Help*).
 ```
 C-c C-h      list key bindings starting with C-c
 C-x C-h      list key bindings starting with C-x
 C-x 8 C-h    list key bindings starting with C-x 8
+C-x 4 C-h    list key bindings starting with C-x 4
+C-x r C-h    list key bindings starting with C-x r
 ```
 
 ## Align
-`table-capture' and `table-release' can be used to line up text.
+When `align' has no effect, `table-capture' and `table-release' can be used to line up text.
