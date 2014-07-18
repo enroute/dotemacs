@@ -11,6 +11,17 @@ $ git clone git@github.com:enroute/dotemacs.git
 $ ln -s dotemacs/.emacs.d .emacs.d
 $ ln -s dotemacs/.emacs.d/.emacs .emacs
 ```
+========
+# Packages which may be required
+```
+apt-get install w3m-el cscope-el yasnippet
+```
+
+For emacs with version less than 24, emacs-goodies-el might also be necessary:
+```
+apt-get install emacs-goodies-el
+```
+
 
 ========
 # Useful commands
