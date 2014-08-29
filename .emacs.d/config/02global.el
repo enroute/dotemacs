@@ -98,3 +98,6 @@ the syntax class ')'."
 
 ;; enter view mode when buffer is read-only
 (setq view-read-only t)
+
+;; no final new line
+(setq mode-require-final-newline nil)
