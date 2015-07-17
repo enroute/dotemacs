@@ -63,6 +63,7 @@
     (define-key keymap "?" 'smart-operator-?)
     (define-key keymap "," 'smart-operator-\,)
     (define-key keymap "~" 'smart-operator-~)
+    (define-key keymap "{" 'smart-operator-{)
     ;; (define-key keymap "." 'smart-operator-.)
     keymap)
   "Keymap used my `smart-operator-mode'.")
@@ -378,6 +379,12 @@ so let's not get too insert-happy."
            (insert "~")))
         (t
          (insert "~"))))
+
+(defun smart-operator-{ ()
+  "See `smart-operator-insert'."
+  (interactive)
+  (smart-operator-insert "{" 'before)
+  (newline-and-indent))
 
 (defun smart-operator-/ ()
   "See `smart-operator-insert'."

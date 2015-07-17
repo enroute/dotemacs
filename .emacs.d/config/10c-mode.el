@@ -1,8 +1,8 @@
 (add-hook 'c-mode-common-hook
   (lambda ()
     (font-lock-add-keywords nil
-      '(("\\<\\(FIXME\\|TODO\\|HACK\\|fixme\\|todo\\|hack\\)" 1 
-        font-lock-warning-face t)))))
+      '(("\\<\\(FIXME\\|TODO\\|HACK\\|fixme\\|todo\\|hack\\)" 1 font-lock-warning-face t)
+        ("\\<\\(JNIEXPORT\\|JNICALL\\|JNIEnv\\|jint\\)\\>" . font-lock-keyword-face)))))
 
 ;; comment out codes between "#if 0" and "#else" or "#endif"
 (defun my-c-mode-font-lock-if0 (limit)
@@ -38,6 +38,7 @@
   (smart-operator-mode)
   (c-set-style "linux")
   (setq indent-tabs-mode nil            ; disable tabs
+        tab-width 4                     ; 4 spaces of tab width
         c-basic-offset 4)               ; 4 spaces of basic offset
   (c-set-offset 'inextern-lang 0)       ; no indent for: extern "C" {
   (c-set-offset 'arglist-intro '+)      ; http://www.emacswiki.org/emacs/IndentingC

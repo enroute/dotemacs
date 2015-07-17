@@ -48,13 +48,13 @@
 ;; If the @annotations do not indent properly, try the following solution:
 ;; Treat the @annotations as comments, which will cause it to indent properly.
 ;; http://lists.gnu.org/archive/html/help-gnu-emacs/2011-04/msg00262.html
-;; (add-hook 'java-mode-hook
-;;       '(lambda ()
-;;          "Treat Java 1.5 @-style annotations as comments."
-;;          (setq c-comment-start-regexp 
-;;            "\\(@\\|/\\(/\\|[*][*]?\\)\\)")
-;;          (modify-syntax-entry ?@ "< b" 
-;;                   java-mode-syntax-table)))
+(add-hook 'java-mode-hook
+      '(lambda ()
+         "Treat Java 1.5 @-style annotations as comments."
+         (setq c-comment-start-regexp 
+           "\\(@\\|/\\(/\\|[*][*]?\\)\\)")
+         (modify-syntax-entry ?@ "< b" 
+                  java-mode-syntax-table)))
                           
 ;; example of prj.el, which should be put in the root directory of the project
 (when nil
