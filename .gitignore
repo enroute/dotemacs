@@ -9,3 +9,6 @@
 .emacs.d/auto-save-list/
 .emacs.d/emacs-backup/
 .emacs.d/semanticdb/
+
+.emacs.d/%backup%~
+.emacs.d/config/000private.el
