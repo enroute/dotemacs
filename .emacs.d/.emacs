@@ -26,6 +26,7 @@
 (load "12lua-mode")  ; lua mode
 (load "13cperl-mode"); cperl-mode
 (load "14org-mode")  ; org-mode
+(load "15php-mode")  ; php-mode
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

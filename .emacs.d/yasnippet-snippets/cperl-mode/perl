@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: main
+# --
+#!/usr/bin/perl -w
+use strict;
+use warnings;
+
+$0
+
+__DATA__
