@@ -12,8 +12,9 @@
   (interactive)
   (with-current-buffer (switch-to-buffer "*ASCII table*")
     (erase-buffer)
-    (let ((i   0)
-          (tmp 0))
+    (let ((i     0)
+          (tmp   0)
+          (rows 32))
       (insert (propertize
                "                     [ASCII table]\n\n"
                'face font-lock-comment-face))
@@ -21,8 +22,8 @@
                (concat "DEC [0X]  SYM | DEC [0X]  SYM | DEC [0X]  SYM | DEC [0X]  SYM\n"
                        "--------------+---------------+---------------+--------------\n")
                'face font-lock-comment-face))
-      (while (< i 32)
-        (dolist (tmp (list i (+ 32 i) (+ 64 i) (+ 96 i)))
+      (while (< i rows)
+        (dolist (tmp (list i (+ rows i) (+ rows rows i) (+ rows rows rows i)))
           (insert (concat
                    (propertize (format "%3d " tmp)
                                'face font-lock-function-name-face)
@@ -31,14 +32,17 @@
                    "  "
                    (propertize (format "%3s" (single-key-description tmp))
                                'face font-lock-string-face)
-                   (unless (= tmp (+ 96 i))
-                     (propertize " | " 'face font-lock-variable-name-face)))))
+                   (unless (= tmp (+ rows rows rows i))
+                     ;(propertize " | " 'face font-lock-variable-name-face)))))
+                     (propertize " | " 'face font-lock-comment-face)))))
         (newline)
         (setq i (+ i 1)))
       (beginning-of-buffer))
     (local-set-key "q" 'kill-this-buffer)
     (toggle-read-only 1)
     (message "Press q to quit.")))
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
