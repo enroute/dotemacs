@@ -101,3 +101,5 @@ the syntax class ')'."
 
 ;; no final new line
 (setq mode-require-final-newline nil)
+
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
