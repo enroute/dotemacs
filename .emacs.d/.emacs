@@ -26,7 +26,9 @@
 (load "12lua-mode")  ; lua mode
 (load "13cperl-mode"); cperl-mode
 (load "14org-mode")  ; org-mode
-(load "15php-mode")  ; php-mode
+
+(if (> emacs-major-version 23) ; emacs 23 has problem in with cl-lib in loading php-mode
+    (load "15php-mode"))  ; php-mode
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
