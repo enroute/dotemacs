@@ -30,6 +30,9 @@
 (if (> emacs-major-version 23) ; emacs 23 has problem in with cl-lib in loading php-mode
     (load "15php-mode"))  ; php-mode
 
+;; When done, show the home directory
+(dired (expand-file-name "~/"))
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

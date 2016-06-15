@@ -27,19 +27,20 @@
         (when (and start (> depth 0))
           (c-put-font-lock-face start (point) 'font-lock-comment-face)))))
   nil)
+
+;; Make it available to c++-mode too.
 (defun my-c-mode-common-hook ()
   (font-lock-add-keywords
    nil
-   '((my-c-mode-font-lock-if0 (0 font-lock-comment-face prepend))) 'add-to-end))
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-
-
-(add-hook 'c-mode-hook (lambda ()
+   '((my-c-mode-font-lock-if0 (0 font-lock-comment-face prepend))) 'add-to-end)
   (smart-operator-mode)
   (c-set-style "linux")
   (setq indent-tabs-mode nil            ; disable tabs
         tab-width 4                     ; 4 spaces of tab width
         c-basic-offset 4)               ; 4 spaces of basic offset
   (c-set-offset 'inextern-lang 0)       ; no indent for: extern "C" {
-  (c-set-offset 'arglist-intro '+)      ; http://www.emacswiki.org/emacs/IndentingC
-  (c-set-offset 'case-label '+)))       ; switch-case indentation style
+  (c-set-offset 'arglist-intro '+) ; http://www.emacswiki.org/emacs/IndentingC
+  (c-set-offset 'case-label '+)    ; switch-case indentation style
+  )
+(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
