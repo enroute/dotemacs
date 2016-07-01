@@ -88,3 +88,12 @@ C-x r C-h    list key bindings starting with C-x r
 
 ## Align
 When `align' has no effect, `table-capture' and `table-release' can be used to line up text.
+
+## Dired
+Use `dired-listing-switches' to customize the dired format.
+
+```
+(setq dired-listing-switches "-alk")
+```
+
+or use "C-u s" in a dired buffer to change switches on the fly.
