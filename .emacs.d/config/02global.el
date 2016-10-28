@@ -104,3 +104,6 @@ the syntax class ')'."
 
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; Split the windows horizontally instead of vertically, which makes it much easier to follow the changes.
+(csetq ediff-split-window-function 'split-window-horizontally)
