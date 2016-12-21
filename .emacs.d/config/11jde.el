@@ -1,5 +1,9 @@
 ;;; jdee, for java
 
+;; NOTE:
+;; jde may not be compatible with openjdk-9, which reports:
+;; Args out of range: #<buffer java version>, 0, 0
+
 ;; for jdee 2.4.0.1, in case `jde-get-jdk-dir' throws an error, the
 ;; environment variable may be required, e.g., put the following in
 ;; ~/.bashrc
