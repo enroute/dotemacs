@@ -70,7 +70,7 @@ COMMAND."
 (defun sdcv ()
   (interactive)
   (let ((word (if (and (mark) (region-active-p))
-                  (buffer-substring-no-properties (region-beginning) (regine-end))
+                  (buffer-substring-no-properties (region-beginning) (region-end))
                 (current-word t t))))
     (when (not word)
       (setq word (read-string "Enter word to translate: ")))
