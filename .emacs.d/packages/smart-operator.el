@@ -384,7 +384,7 @@ so let's not get too insert-happy."
   "See `smart-operator-insert'."
   (interactive)
   (smart-operator-insert "{" 'before)
-  (newline-and-indent))
+  (reindent-then-newline-and-indent))
 
 (defun smart-operator-/ ()
   "See `smart-operator-insert'."
