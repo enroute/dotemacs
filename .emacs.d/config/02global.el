@@ -110,3 +110,8 @@
 
 ;; Split the windows horizontally instead of vertically, which makes it much easier to follow the changes.
 (setq ediff-split-window-function 'split-window-horizontally)
+
+;; add left & right margin
+(add-hook 'window-configuration-change-hook
+          (lambda ()
+            (set-window-margins (car (get-buffer-window-list (current-buffer) nil t)) 1 1)))

@@ -67,6 +67,7 @@ C-x C-o      delete-blank-lines
 M-SPC        just-one-space
 M-\          delete-horizontal-space
              flush-lines
+M-`          Text-mode menu
 ```
 
 ## Mode dependent commands
