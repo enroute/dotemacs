@@ -111,6 +111,20 @@
 ;; Split the windows horizontally instead of vertically, which makes it much easier to follow the changes.
 (setq ediff-split-window-function 'split-window-horizontally)
 
+;; load emacs 24's package system. Add MELPA repository.
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(when (< emacs-major-version 24)
+    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+;; for magit
+;; (when (>= emacs-major-version 24)
+;;   (add-to-list
+;;    'package-archives
+;;    ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+;;    '("melpa" . "http://melpa.milkbox.net/packages/")
+;;    t))
+
 ;; add left & right margin
 (add-hook 'window-configuration-change-hook
           (lambda ()
