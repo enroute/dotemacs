@@ -120,3 +120,12 @@ save it in `ffap-file-at-point-line-number' variable."
   (when ffap-file-at-point-line-number
     (goto-line ffap-file-at-point-line-number)
         (setq ffap-file-at-point-line-number nil)))
+
+
+;; https://www.emacswiki.org/emacs/WThreeMHintsAndTips
+(defun w3m-copy-url-at-point ()
+  (interactive)
+  (let ((url (w3m-anchor)))
+    (if (w3m-url-valid url)
+        (kill-new (w3m-anchor))
+      (message "No URL at point!"))))
