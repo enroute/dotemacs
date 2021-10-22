@@ -1,5 +1,7 @@
 ;;;; Global settings
 
+(setq frame-background-mode 'dark)      ; default to dark background, so to fix blue face on console
+
 (setq default-major-mode 'text-mode)    ; set default major mode
 
 (winner-mode 1)                         ; enable winner mode
